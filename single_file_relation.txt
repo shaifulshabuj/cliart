@@ -1,0 +1,19 @@
+Code Relation Diagram for: example.py
+============================================================
+
+Internal Symbol Relationships:
+Symbol Types:
+  └── ExampleClass [class]
+  └── __init__ [method of ExampleClass]
+  └── greet [method of ExampleClass]
+  └── main_function [method of ExampleClass]
+
+Relationships:
+
+ExampleClass [class]
+  └── has method __init__
+  └── has method greet
+  └── has method main_function
+  └── has method __init__
+  └── has method greet
+  └── has method main_function

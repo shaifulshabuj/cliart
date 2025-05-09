@@ -1,0 +1,155 @@
+Code Relation Diagram for: csharp_example
+============================================================
+
+File Dependencies:
+
+Program.cs
+  └── imports from:
+      └── System.Collections.Generic (external)
+      └── BlogApp.Services (external)
+      └── BlogApp.Models (external)
+      └── System.Linq (external)
+      └── System (external)
+
+Models/Post.cs
+  └── imports from:
+      └── System.Collections.Generic (external)
+      └── System (external)
+
+Models/User.cs
+  └── imports from:
+      └── System.Collections.Generic (external)
+      └── System (external)
+
+Models/Comment.cs
+  └── imports from:
+      └── System (external)
+
+Services/UserService.cs
+  └── imports from:
+      └── System.Linq (external)
+      └── System.Collections.Generic (external)
+      └── BlogApp.Models (external)
+      └── System (external)
+
+Services/PostService.cs
+  └── imports from:
+      └── System.Linq (external)
+      └── System.Collections.Generic (external)
+      └── BlogApp.Models (external)
+      └── System (external)
+
+Services/CommentService.cs
+  └── imports from:
+      └── System.Linq (external)
+      └── System.Collections.Generic (external)
+      └── BlogApp.Models (external)
+      └── System (external)
+
+
+Symbol Usage Across Files:
+
+BlogApp.csproj defines:
+  └── TargetFramework:net6.0
+
+Program.cs defines:
+  └── Program
+  └── DisplayData
+  └── Main
+  └── foreach
+  └── CreateSampleData
+
+Models/Post.cs defines:
+  └── Post
+  └── Content
+  └── AuthorId
+  └── Title
+  └── Id
+
+Models/User.cs defines:
+  └── Username
+  └── Id
+  └── Email
+  └── User
+
+Models/Comment.cs defines:
+  └── Content
+  └── AuthorId
+  └── PostId
+  └── Comment
+  └── Id
+
+Services/UserService.cs defines:
+  └── CreateUser
+  └── UserService
+  └── GetAllUsers
+  └── GetUser
+
+Services/PostService.cs defines:
+  └── if
+  └── GetAllPosts
+  └── GetPostsByAuthorId
+  └── GetPost
+  └── CreatePost
+  └── PostService
+
+Services/CommentService.cs defines:
+  └── GetAllComments
+  └── CommentService
+  └── if
+  └── GetCommentsByPostId
+  └── CreateComment
+  └── GetCommentsByAuthorId
+  └── GetComment
+
+
+Function Call Graph:
+
+CreateSampleData (in Program.cs)
+  └── calls Program (in Program.cs)
+
+DisplayData (in Program.cs)
+  └── calls Program (in Program.cs)
+
+foreach (in Program.cs)
+  └── calls Program (in Program.cs)
+
+CreateUser (in Services/UserService.cs)
+  └── calls UserService (in Services/UserService.cs)
+
+GetUser (in Services/UserService.cs)
+  └── calls UserService (in Services/UserService.cs)
+
+GetAllUsers (in Services/UserService.cs)
+  └── calls UserService (in Services/UserService.cs)
+
+CreatePost (in Services/PostService.cs)
+  └── calls PostService (in Services/PostService.cs)
+
+if (in Services/PostService.cs, Services/CommentService.cs)
+  └── calls PostService (in Services/PostService.cs)
+  └── calls CommentService (in Services/CommentService.cs)
+
+GetPost (in Services/PostService.cs)
+  └── calls PostService (in Services/PostService.cs)
+
+GetAllPosts (in Services/PostService.cs)
+  └── calls PostService (in Services/PostService.cs)
+
+GetPostsByAuthorId (in Services/PostService.cs)
+  └── calls PostService (in Services/PostService.cs)
+
+CreateComment (in Services/CommentService.cs)
+  └── calls CommentService (in Services/CommentService.cs)
+
+GetComment (in Services/CommentService.cs)
+  └── calls CommentService (in Services/CommentService.cs)
+
+GetAllComments (in Services/CommentService.cs)
+  └── calls CommentService (in Services/CommentService.cs)
+
+GetCommentsByPostId (in Services/CommentService.cs)
+  └── calls CommentService (in Services/CommentService.cs)
+
+GetCommentsByAuthorId (in Services/CommentService.cs)
+  └── calls CommentService (in Services/CommentService.cs)
